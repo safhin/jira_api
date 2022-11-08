@@ -34,11 +34,6 @@ app.get('/', (req, res) => {
    res.send("working");
 });
 
-const getInclude = require('./api/app/v1/include')
-app.use('/api/app/v1/include', getInclude)
-
-const cache_clear = require("./api/cache-clear/cache-clear");
-app.use("/api/cache-clear", cache_clear);
 
 const subcriptionSync = require('./api/common/v1/subSync')
 app.use('/api/v1/subSync', subcriptionSync)
@@ -68,8 +63,6 @@ app.use('/api/v1/otpSend', OTPSend)
 // }
 
 
-const getMsisdn = require('./api/app/v1/getMsisdn')
-app.use('/api/app/v1/getMsisdn', getMsisdn)
 
 
 // app.use(checkAuthorize)
@@ -81,12 +74,6 @@ app.use('/api/v1/content', getContent)
 const userOtp = require('./api/common/v1/otp')
 
 app.use('/api/v1/user', userOtp)
-
-const getHome = require('./api/app/v1/content')
-
-app.use('/api/app/v1/content', getHome)
-
-
 
 
 app.use((req, res, next) => {

@@ -6,7 +6,6 @@ const db = require("../../../db/database");
 const sub = require("../../../domain/common/sub");
 var dateFormat = require('dateformat');
 const router = express.Router();
-const redis = require('redis');
 var axios = require('axios');
 const { validateMsisdn,getNumberOfDays,uuid } = require("../../../utils/validate")
 const config = require("../../../config/base_url");

@@ -7,9 +7,8 @@ const db = require("../../db/database");
 const sql = require("../../domain/v1/content/sql");
 var dateFormat = require('dateformat');
 const router = express.Router();
-const redis = require('redis');
 var axios = require('axios');
-const client = redis.createClient(6379);
+
 
 const config = require("../../config/base_url");
 const apiUrl = config.apiurl;
@@ -27,13 +26,11 @@ router.post("/create", async (req, res, next) => {
     db.query(sql.InsertTask(task), (err, data) => {
         if (!err) {
             if (data.length > 0) {
-                console.log(data)
-
+                console.log(data);
                 return res.status(200).json(data);
 
             } else{
-
-                 return res.status(200).json({});
+                 return res.status(200).json([]);
             }
         }
     });
@@ -84,7 +81,6 @@ router.get("/allTask", (req, res, next) => {
             }
             if (data.length > 0) {
                 return res.status(200).json(data);
-    
             }else{
                    return res.status(200).json();
             }
