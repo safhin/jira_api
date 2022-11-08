@@ -1,0 +1,69 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.idea/
+/node_modules
+/node_modules/*
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+/logs
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+log
+/log
+log/*
+log/acces-log/*
+log/api-log/*
+log/appuse-log/*
+log/hit-log/*
+log/withdraw-log/*
+log/error-log/*
+
+# local env files
+.env
+.env.local
+.env.bak
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# idea config
+/.idea
+.idea
+
+# db
+
+package-lock.json
+
+# server.js
+# /server.js
+
+# /config
+# /config/*
+
+cache.json
