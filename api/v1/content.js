@@ -55,7 +55,7 @@ router.post("/task/:id/:status", (req, res, next) => {
             
 });
 
-router.delete("/task/:id", (req, res, next) => {
+router.post("/task/:id", (req, res, next) => {
     let { id } = req.params;
 
     db.query(sql.DeleteTask(id), (err, data) => {
@@ -82,7 +82,7 @@ router.get("/allTask", (req, res, next) => {
             if (data.length > 0) {
                 return res.status(200).json(data);
             }else{
-                   return res.status(200).json();
+                return res.status(200).json(data);
             }
         });
     } catch (error) {
